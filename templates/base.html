@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Controle Financeiro</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- CSS DASHBOARD -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo-area">
+
+            <h2>💰 Financeiro</h2>
+
+        </div>
+
+        <nav class="menu">
+
+            <!-- INÍCIO -->
+            <a href="{{ url_for('dashboard.inicio') }}">
+
+                <span>🏠</span>
+
+                <span>Início</span>
+
+            </a>
+
+            <!-- DASHBOARD -->
+            <a href="{{ url_for('dashboard.dashboard') }}">
+
+                <span>📊</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <!-- PARCELAMENTOS -->
+            <a href="{{ url_for('parcelamentos.listar') }}">
+
+                <span>💳</span>
+
+                <span>Parcelamentos</span>
+
+            </a>
+
+            <!-- DESPESAS -->
+            <a href="{{ url_for('despesas.index') }}">
+
+                <span>🧾</span>
+
+                <span>Despesas</span>
+
+            </a>
+
+            <!-- RECEITAS -->
+            <a href="{{ url_for('receitas.index') }}">
+
+                <span>💵</span>
+
+                <span>Receitas</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- BOTÃO DARK MODE -->
+    <button id="darkModeToggle">
+
+        🌙
+
+    </button>
+
+    <!-- SCRIPT DARK MODE -->
+    <script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
+
+</body>
+
+</html>
